@@ -14,6 +14,7 @@ type
   public
     constructor Create;
     destructor Destroy; override;
+    function ToString: string; override;
     property NSR: string read FNSR write FNSR;
     property TipoRegistro: string read FTipoRegistro write FTipoRegistro;
     property Data: string read FData write FData;
@@ -35,6 +36,11 @@ destructor TModelRegistro.Destroy;
 begin
 
   inherited;
+end;
+
+function TModelRegistro.ToString: string;
+begin
+
 end;
 
 end.

@@ -34,6 +34,7 @@ object frmInserirREP: TfrmInserirREP
     Top = 72
     Width = 471
     Height = 521
+    DataSource = DataSource1
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -60,6 +61,10 @@ object frmInserirREP: TfrmInserirREP
     Filter = 'TXT|*.TXT'
     InitialDir = 'C:\Users\Usu'#225'rio\Documents'
     Left = 936
+    Top = 16
+  end
+  object DataSource1: TDataSource
+    Left = 872
     Top = 16
   end
 end

@@ -57,6 +57,15 @@ object frmInserirREP: TfrmInserirREP
     Height = 18
     TabOrder = 4
   end
+  object brCount: TButton
+    Left = 640
+    Top = 22
+    Width = 81
+    Height = 33
+    Caption = 'Conta'
+    TabOrder = 5
+    OnClick = brCountClick
+  end
   object dlgExplorar: TOpenTextFileDialog
     Filter = 'TXT|*.TXT'
     InitialDir = 'C:\Users\Usu'#225'rio\Documents'

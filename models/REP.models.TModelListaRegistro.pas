@@ -3,19 +3,19 @@
 interface
 
 uses
-  REP.models.TModelRegistro, System.SysUtils, System.Classes;
+  REP.models.TModelRegistro, System.SysUtils, System.Classes,
+  System.Generics.Collections;
 
 type
   TModelListaRegistro = class
   private
-    FModelListaRegistro: TList;
-
+    FModelListaRegistro: TObjectList<TModelRegistro>;
   public
     constructor Create;
     destructor Destroy; override;
     procedure Adicionar(pModelRegistro: TModelRegistro);
     procedure Remover(Index: Integer);
-    procedure Listar();
+    function Listar(): TObjectList<TModelRegistro>;
     function Count: Integer;
     function ToString: string; override;
   end;
@@ -35,12 +35,13 @@ end;
 function TModelListaRegistro.Count: Integer;
 begin
   Result := FModelListaRegistro.Count;
+
 end;
 
 constructor TModelListaRegistro.Create;
 begin
   inherited Create;
-  FModelListaRegistro := TList.Create;
+  FModelListaRegistro := TObjectList<TModelRegistro>.Create;
 end;
 
 destructor TModelListaRegistro.Destroy;
@@ -49,16 +50,17 @@ begin
   inherited;
 end;
 
-procedure TModelListaRegistro.Listar;
-var
-  i: integer;
-  Items: string;
-begin
-  for i := 0 to Self.Count do
-  begin
+function TModelListaRegistro.Listar(): TArray<TModelRegistro>;
+//var
+//  i: integer;
+//  Items: string;
+//begin
+//  for i := 0 to Self.Count do
+//  begin
 //    Self.Items[i];
-  end;
-
+//  end;
+begin
+  Result := FModelListaRegistro.List;
 end;
 
 procedure TModelListaRegistro.Remover(Index: Integer);
@@ -74,7 +76,7 @@ end;
 
 function TModelListaRegistro.ToString: string;
 begin
-
+  inherited ToString;
 end;
 
 end.

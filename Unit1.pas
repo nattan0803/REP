@@ -16,7 +16,9 @@ type
     mnmDadosREP: TMemo;
     pnlStatus: TPanel;
     DataSource1: TDataSource;
+    brCount: TButton;
     procedure etnExplorarClick(Sender: TObject);
+    procedure brCountClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,13 +39,31 @@ uses
 
 {$R *.dfm}
 
+procedure TfrmInserirREP.brCountClick(Sender: TObject);
+var
+  instance: TModelListaRegistro;
+begin
+  instance.Listar;
+end;
+
 procedure TfrmInserirREP.etnExplorarClick(Sender: TObject);
 var
   linhaFormatada: string;
   tamanhoDaLinha, i: Integer;
   ModelRegistro: TModelRegistro;
   ModelListaRegistro: TModelListaRegistro;
+  list: string;
 begin
+
+
+
+//  list :=    ModelListaRegistro.Create.Listar;
+
+
+
+
+
+
   dlgExplorar.Execute();
   CaminhoArquivoAFD := dlgExplorar.FileName;
   AssignFile(TxtDadosREP, CaminhoArquivoAFD);
@@ -77,7 +97,7 @@ begin
         ModelRegistro.HoraMinuto := Copy(linhaFormatada, 19, 4);
         ModelRegistro.PIS := Copy(linhaFormatada, 22, 12);
         ModelListaRegistro.Adicionar(ModelRegistro);
-//        ShowMessage('Objeto salvo com PIS: ' + ModelRegistro.PIS + ' Tamanho atual da Lista: ' + IntToStr(ModelListaRegistro.Count));
+        ShowMessage('Objeto salvo com PIS: ' + ModelRegistro.PIS + ' Tamanho atual da Lista: ');
 //        ModelListaRegistro.FreeInstance;
 //        ModelRegistro.FreeInstance;
       end;
@@ -89,7 +109,6 @@ begin
 //    begin
 //    mnmDadosREP.Lines.Add(ModelListaRegistro);
 //    end;
-
 //    DataSource1.DataSet.SetFields(ModelListaRegistro);
   end;
   closefile(TxtDadosREP);

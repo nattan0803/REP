@@ -26,7 +26,11 @@
 #*.obj
 #
 
+# confidentials files
+*.txt
+
 # Delphi compiler-generated binaries (safe to delete)
+
 *.exe
 *.dll
 *.bpl

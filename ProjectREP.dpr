@@ -2,7 +2,8 @@ program ProjectREP;
 
 uses
   Vcl.Forms,
-  Unit1 in 'Unit1.pas' {frmInserirREP};
+  Unit1 in 'Unit1.pas' {frmInserirREP},
+  REP.models.TModelRegistro in 'models\REP.models.TModelRegistro.pas';
 
 {$R *.res}
 

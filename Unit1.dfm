@@ -14,26 +14,26 @@ object frmInserirREP: TfrmInserirREP
   PixelsPerInch = 96
   TextHeight = 13
   object edtCaminho: TEdit
-    Left = 80
+    Left = 40
     Top = 24
-    Width = 497
+    Width = 473
     Height = 21
     TabOrder = 0
   end
   object etnExplorar: TButton
-    Left = 600
+    Left = 530
     Top = 22
     Width = 75
-    Height = 25
+    Height = 33
     Caption = 'Explorar'
     TabOrder = 1
     OnClick = etnExplorarClick
   end
   object grdDadosRep: TDBGrid
-    Left = 8
-    Top = 64
-    Width = 73
-    Height = 73
+    Left = 530
+    Top = 72
+    Width = 471
+    Height = 521
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -42,11 +42,19 @@ object frmInserirREP: TfrmInserirREP
     TitleFont.Style = []
   end
   object mnmDadosREP: TMemo
-    Left = 87
-    Top = 64
-    Width = 866
+    Left = 40
+    Top = 72
+    Width = 473
     Height = 521
+    ScrollBars = ssBoth
     TabOrder = 3
+  end
+  object pnlStatus: TPanel
+    Left = 40
+    Top = 48
+    Width = 473
+    Height = 18
+    TabOrder = 4
   end
   object dlgExplorar: TOpenTextFileDialog
     Filter = 'TXT|*.TXT'

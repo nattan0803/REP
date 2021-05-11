@@ -31,6 +31,9 @@ var
 
 implementation
 
+uses
+  REP.models.TModelRegistro;
+
 {$R *.dfm}
 
 procedure TfrmInserirREP.etnExplorarClick(Sender: TObject);
@@ -38,6 +41,7 @@ var
   linhaFormatada: string;
   tamanhoDaLinha: Integer;
   pedaco1, pedaco2, pedaco3, pedaco4, pedaco5: string;
+  ModelRegistro: TModelRegistro;
 begin
   dlgExplorar.Execute();
   CaminhoArquivoAFD := dlgExplorar.FileName;
@@ -60,7 +64,7 @@ begin
     pnlStatus.Caption := ('Erro na abertura do arquivo!!😤😡😓')
   else
   begin
-
+    ModelRegistro := TModelRegistro.Create;
 
     // Começa limpando caso haja dados anteriores
     mnmDadosREP.Clear;
